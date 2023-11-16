@@ -11,7 +11,7 @@ fetch(url)
     // Insertion des images de l'api  
       let dynamiqueimage = document.createElement("img")
       dynamiqueimage.src = data.imageUrl;
-      dynamiqueimage.alt = data.name;
+      dynamiqueimage.alt = data.title;
 
     // Insertion des titres des images   
       const figcaption = document.createElement("figcaption");
