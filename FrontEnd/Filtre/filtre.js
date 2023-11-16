@@ -39,4 +39,6 @@ if (boutonObjet) {
   boutonObjet.addEventListener("click", filtreObjet);
 }
 
-filtreObjet();
+// filtreObjet();
+
+//innerHTML = ""
