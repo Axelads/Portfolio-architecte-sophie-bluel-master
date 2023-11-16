@@ -125,6 +125,59 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+.btnS {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 60px;
+	margin-top: 60px;
+	gap: 10px;
+}
+
+.btn-tous, .btn-Objets {
+	border-radius: 60px ;
+	border: 1px solid #1D6154;
+	background-color: white;
+	width: 100px;
+	height: 37px;
+	font-family: 'Syne';
+	color: #1D6154;
+	font-size: 16px;
+	font-weight: bold; 
+}
+
+.btn-Appartements {
+	border-radius: 60px ;
+	border: 1px solid #1D6154;
+	background-color: white;
+	width: 157px;
+	height: 37px;
+	font-family: 'Syne';
+	color: #1D6154;
+	font-size: 16px;
+	font-weight: bold; 
+}
+
+.btn-Hotel {
+	border-radius: 60px ;
+	border: 1px solid #1D6154;
+	background-color: white;
+	width: 198px;
+	height: 37px;
+	font-family: 'Syne';
+	color: #1D6154;
+	font-size: 16px;
+	font-weight: bold; 
+}
+
+.btn-tous:hover, .btn-Appartements:hover, .btn-Objets:hover, .btn-Hotel:hover {
+	color: white;
+	background-color: #1D6154;
+	cursor: pointer;
+}
+
+
 .gallery {
 	width: 100%;
 	display: grid;
