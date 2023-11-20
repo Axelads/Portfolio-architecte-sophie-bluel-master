@@ -1,8 +1,8 @@
-function Test() {
+function GeneratGallery() {
   const Gallery = document.querySelector(".gallery")
-const url = 'http://localhost:5678/api/works';
+const urlImage = 'http://localhost:5678/api/works';
 
-fetch(url)
+fetch(urlImage)
   .then(response => response.json())
   .then(datas => {
     for( let data of datas) {
@@ -27,7 +27,7 @@ fetch(url)
 
 }
 
- Test();
+ GeneratGallery();
 
 
 
