@@ -22,8 +22,8 @@ function creerBoutons() {
       const categorieName = categories[i - 1].name;
       bouton.id = categorieName;
 
-      bouton.addEventListener('click', function (){
-        filtrerParCategorie(categorieName);
+      bouton.addEventListener('click', function () {
+        
       });
     });
     
@@ -34,18 +34,16 @@ function creerBoutons() {
   }
 }
 
+
 creerBoutons();
 
 
-
-
-
-
-
-
-
-
 // function filtreObjet() {
+//      // Ajoutez un événement au bouton "Objet" pour déclencher la fonction de filtrage
+// const boutonObjet = document.querySelector(".btn-Objets");
+// if (boutonObjet) {
+//   boutonObjet.addEventListener("click", filtreObjet);
+// }
 //     // Remplacez ".gallery" par le sélecteur de votre galerie
 //   const gallery = document.querySelector(".gallery");
 //   const url = 'http://localhost:5678/api/works';
@@ -58,7 +56,7 @@ creerBoutons();
 //         gallery.removeChild(gallery.firstChild);
 //       }
 
-//       // Filtre données  "Objet"
+//         // Filtre données  "Objet"
 //       const objets = datas.filter(data => data.name === "Objet");
 
 //       // Création éléments HTML pour chaque objet et galerie
@@ -80,11 +78,7 @@ creerBoutons();
     
 // }
 
-// // Ajoutez un événement au bouton "Objet" pour déclencher la fonction de filtrage
-// const boutonObjet = document.querySelector(".btn-Objets");
-// if (boutonObjet) {
-//   boutonObjet.addEventListener("click", filtreObjet);
-// }
+
 
 // filtreObjet();
 
