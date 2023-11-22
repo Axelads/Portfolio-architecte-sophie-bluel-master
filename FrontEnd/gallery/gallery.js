@@ -1,4 +1,4 @@
-function GeneratGallery() {
+export function GeneratGallery() {
   const Gallery = document.querySelector(".gallery")
 const urlImage = 'http://localhost:5678/api/works';
 
