@@ -1,4 +1,7 @@
 const formulaire = document.querySelector(".btnS");
+const filtre = formulaire.querySelectorAll('button')
+console.log(filtre);
+
 
 function AjoutBouton () {
 
@@ -16,8 +19,17 @@ for ( let data of datas ) {
   bouton.value = Valeurbtn;
   Valeurbtn ++;
   bouton.id = data.name;
+  bouton.classList.add('btn');
+
   formulaire.appendChild(bouton);
         }
     })
   }
 AjoutBouton()
+
+filtres.forEach(filtre => {
+    filtre.addEventListener('click', () => {
+    console.log('ok');
+
+  })
+})
