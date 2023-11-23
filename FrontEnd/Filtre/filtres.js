@@ -21,33 +21,33 @@ for ( let data of datas ) {
            Valeurbtn ++;
            bouton.id = data.name;
            bouton.classList.add('btn');
-
+    console.log(bouton.length);
   formulaire.appendChild(bouton);
         }
     })
   }
 AjoutBouton()
 
+
+// Fonction click sur les boutons
 function filtre () {
-  let filtres = formulaire.querySelectorAll('.btn')
+  let filtres = document.querySelectorAll('.btn')
   console.log(filtres.length);
 
   for ( let filtre of filtres) {
     filtre.addEventListener('click', () => {
       let value = filtre.value;
 
-          fetch(urlImage)
-          .then(response => response.json)
-          .then (images =>{
+          // fetch(urlImage)
+          // .then(response => response.json)
+          // .then (images =>{
               if (value === 0){
-                 console.log(images);
+                 console.log("TOUS");
                 } else {
-                  const filtreImage = images.flitre(image => images.id === filtre.id);
-                }
-
+                    // const filtreImage = images.flitre(image => images.id === button.value);
+                    console.log("autres");
+      }
     });
-  });
+  };
 }
-}
-
 filtre();

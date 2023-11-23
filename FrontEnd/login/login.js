@@ -29,14 +29,14 @@ async function login() {
     // Ajout l'ID "Error" à l'élément errorParagraph (qui est le <p>)
     errorParagraph.id = 'Error';
     // Verifier si le message d'erreur existe déjà,
-    if (!Titre.contains(errorParagraph)) {
-      Titre.appendChild(errorParagraph);
+     h2.appendChild(errorParagraph);
     
     }
   } catch (error) {
     
     console.error('Erreur lors de la connexion:', error);
   }
+}
 }
 
 // const form = document.querySelector('form');
