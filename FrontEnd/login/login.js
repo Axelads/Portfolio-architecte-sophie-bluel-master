@@ -1,7 +1,6 @@
 async function login() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-
   const url = 'http://localhost:5678/api/users/login';
 
   try {
@@ -16,6 +15,7 @@ async function login() {
         email: email,
         password: password
       })
+      
     });
 
     const data = await response.json();
@@ -26,18 +26,27 @@ async function login() {
     } else {
       const errorParagraph = document.createElement('p');
       errorParagraph.textContent = 'Mot de passe ou E-mail incorrect';
-    // Ajout l'ID "Error" à l'élément errorParagraph (qui est le <p>)
-    errorParagraph.id = 'Error';
-    // Verifier si le message d'erreur existe déjà,
-     h2.appendChild(errorParagraph);
-    
+      // Ajout l'ID "Error" à l'élément errorParagraph (qui est le <p>)
+      errorParagraph.id = 'Error';
+      
+      // Verifier si le message d'erreur existe déjà,
+      const h2 = document.getElementById('Log').querySelector('h2');
+      const existingError = document.getElementById('Error');
+
+      if (existingError) {
+        // Si le message d'erreur existe déjà, le remplacer
+        h2.replaceChild(errorParagraph, existingError);
+      } else {
+        // Sinon, l'ajouter
+        h2.appendChild(errorParagraph);
+      }
     }
   } catch (error) {
-    
     console.error('Erreur lors de la connexion:', error);
-  }
+  };
 }
-}
+login();
+
 
 // const form = document.querySelector('form');
 // const emailInput = document.getElementById('email');
