@@ -1,51 +1,46 @@
-async function login() {
+function login() {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const url = 'http://localhost:5678/api/users/login';
 
-  try {
-    const response = await fetch(url, {
+
+    fetch(url, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MTg3NDkzOSwiZXhwIjoxNjUxOTYxMzM5fQ.JGN1p8YIfR-M-5eQ-Ypy6Ima5cKA4VbfL2xMr2MgHm4'
-      },
+               },
       body: JSON.stringify({
         email: email,
-        password: password
-      })
+        password: password,
+    })
       
-    });
+    })
+       .then(response => response.json())
+       .then(data => {
+        localStorage.setItem("token", data.token);
+        window.location.href = '../index.html';
+        console.log(data);
+       })
 
-    const data = await response.json();
-
-    if (response.ok) {
-      // Connexion réussie
-      window.location.href = '../index.html';
-    } else {
-      const errorParagraph = document.createElement('p');
+       .catch ((error) => {
+        const errorParagraph = document.createElement('p');
       errorParagraph.textContent = 'Mot de passe ou E-mail incorrect';
       // Ajout l'ID "Error" à l'élément errorParagraph (qui est le <p>)
       errorParagraph.id = 'Error';
       
-      // Verifier si le message d'erreur existe déjà,
       const h2 = document.getElementById('Log').querySelector('h2');
       const existingError = document.getElementById('Error');
+        console.log(error);
+       });
+ }
 
-      if (existingError) {
-        // Si le message d'erreur existe déjà, le remplacer
-        h2.replaceChild(errorParagraph, existingError);
-      } else {
-        // Sinon, l'ajouter
-        h2.appendChild(errorParagraph);
-      }
-    }
-  } catch (error) {
-    console.error('Erreur lors de la connexion:', error);
-  };
-}
-login();
+ const loginForm = document.getElementById("LoginForm");
+ loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  login();
+ })
+
 
 
 // const form = document.querySelector('form');
