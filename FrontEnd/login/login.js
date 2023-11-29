@@ -43,7 +43,8 @@ function login() {
   });
 }
 
-const loginForm = document.getElementById('LoginForm');
+const loginForm = document.getElementById('loginForm');
+console.log(loginForm);
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
   login();

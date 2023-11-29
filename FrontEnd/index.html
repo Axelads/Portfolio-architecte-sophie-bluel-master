@@ -11,9 +11,11 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./gallery/gallery.js" type="module" defer></script>
 	<script src="./Filtre/filtres.js" type="module" defer></script>
-    <script src="login/login.js" type="module" defer></script>
 </head>
 <body>
+	<div class="bandeau">
+		<button class="boutonEdition"><i class="fa-regular fa-pen-to-square"></i>Mode édition</button>
+	</div>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
@@ -21,6 +23,7 @@
 			<li>projets</li>
 			<li>contact</li>
 			<li><a href="login/login.html" class="login">login</a></li>
+			<li class="logout">logout</li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -38,11 +41,14 @@
 		</article>
 	</section>
 	<section id="portfolio">
+	  <div class="modifier">	
 		<h2>Mes Projets</h2>
-		<div>
-		   <form class="btnS">
-			<button class="btn-tous" value="0">Tous</button>
-		   </form>
+		<li><i class="fa-regular fa-pen-to-square"></i>modifier</li>
+	  </div>
+	  <div>
+		   <div class="btnS">
+			<button class="btn" id="tous">Tous</button>
+		   </div>
 		</div>
 		<div class="gallery"></div>
 	</section>
