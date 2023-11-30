@@ -33,6 +33,8 @@ modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 
 function toggleModal(){
     modalContainer.classList.toggle("active");
+
+    if(modalContainer.classList.contains("active")) {
     fetch(urlImage)
      .then(response => response.json())
      .then(datas => {
@@ -42,14 +44,14 @@ function toggleModal(){
     // Insertion des images de l'api  
       let dynamiqueimage = document.createElement("img")
       dynamiqueimage.src = data.imageUrl;
-    
+          
 
      figure.appendChild(dynamiqueimage)
      modalGallery.appendChild(figure)
       
         }
      })
+} else {
+    modalGallery.innerHTML = "";
+   }
 }
-
-toggleModal();
-
