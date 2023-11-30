@@ -347,7 +347,7 @@ footer nav ul {
 	background: #fff;
 	border-radius: 10px;
 	position: absolute;
-	top: 22%;
+	top: -10%;
 	left: 50%;
 	transform: translate(-50%, 50%);
 }
@@ -390,4 +390,27 @@ cursor: pointer;
 	display: flex;
 	justify-content: center;
 	border-top:2px solid #B3B3B3 ;
+}
+
+.modal-Galery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	overflow: hidden;
+	overflow-y: scroll;
+	max-height: 500px;
+	margin-bottom: 30px;
+
+}
+
+.modal-Galery figure {
+  width: 77px;
+  height: 103px;
+}
+
+.modal-Galery img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
