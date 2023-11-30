@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./gallery/gallery.js" type="module" defer></script>
 	<script src="./Filtre/filtres.js" type="module" defer></script>
+	<script src="admin.js" type="module" defer></script>
 </head>
 <body>
 	<div class="bandeau">
@@ -46,11 +47,22 @@
 	<section id="portfolio">
 	  <div class="modifier">	
 		<h2>Mes Projets</h2>
-		<li><i class="fa-regular fa-pen-to-square"></i>modifier</li>
-	  </div>
-	  <div>
-		   <div class="btnS">
-			<button class="btn" id="tous">Tous</button>
+		<div class="modal-container">
+			<div class="overlay modal-trigger"></div>
+			<div class="modal">
+				<button class="close-modal modal-trigger">X</button>
+					 <p>Galerie Photo</p>
+				<div class="modal-Galery"></div>
+				<div class = btn-img>
+				   <button class="addImg">Ajouter une photo</button>
+			    </div>
+			</div>
+		</div>
+			<button class="modalbtn modal-trigger"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
+		</div>
+	  <div>		 
+		  <div class="btnS">
+		       	<button class="btn" id="tous">Tous</button>
 		   </div>
 		</div>
 		<div class="gallery"></div>
