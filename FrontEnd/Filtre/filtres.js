@@ -38,11 +38,9 @@ async function GeneratFiltre() {
 
 await GeneratFiltre()
 
-async function fetchWorks() {
-  const response = await fetch('http://localhost:5678/api/works')
-  return await response.json()
-}
-const travaux = await fetchWorks()
+
+  const response = 'http://localhost:5678/api/works';
+
 const bouton = document.querySelectorAll('.btn')
 console.log(bouton);
 const gallery = document.querySelector('.gallery')
@@ -57,32 +55,23 @@ function filtre () {
         gallery.innerHTML = ''
         GeneratGallery()
       } else {
-        gallery.innerHTML =''
-        
-        console.log(travaux);
-        const filtreImage = travaux.filter(image => image.category.name == value);
-        console.log(filtreImage);
-        console.log(filtre.id);
-        
+        fetch(response)
+        .then(response => response.json())
+        .then(datas => {
+          for(let data of datas){
+            console.log(data);
+        if (data.category.name == 'Appartements'){
+          let test ="";
+          gallery.innerHTML="";
+          test+=`<figure>
+          <img src=${data.imageUrl}>
+          </figure>`
+          gallery.insertAdjacentHTML("beforeend",test)
+        }
       }
-
-      
-
-          // fetch(urlImage)
-          // .then(response => response.json)
-          // .then (images =>{
-          //   console.log(images);
-          //     if (value == 'tous'){
-          //        console.log("TOUS");
-          //        gallery.innerHTML = ''
-          //        GeneratGallery()
-
-          //       } else {
-          //           const filtreImage = images.filter(image => images.category.name === button.id);
-          //           console.log(filtreimage);
-      // }
-    });
-  };
-}
-
+    })
+      };
+       });
+    };
+  }
 filtre();

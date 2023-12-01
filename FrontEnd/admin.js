@@ -1,3 +1,4 @@
+// creation page admin
 
 //Apparition de modes en Admin
 async function PageAdmin() {
@@ -30,7 +31,7 @@ const modalTriggers = document.querySelectorAll(".modal-trigger");
 const urlImage = 'http://localhost:5678/api/works';
 const modalGallery = document.querySelector(".modal-Galery")
 
-
+// creation de la modal
 modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 
 function toggleModal(){

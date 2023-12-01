@@ -310,7 +310,7 @@ footer nav ul {
 /********** modale *********/
 
 .modalbtn {
-	display: flex;
+	display: none;
 	margin-left: 25px;
 	justify-content: center;
 	align-items: center;
