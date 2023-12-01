@@ -96,7 +96,7 @@ nav li {
 }
 
 .bandeau {
-	display: none;
+	display: flex;
 	justify-content: center;
 	background-color: black;
 	width: 100vw;

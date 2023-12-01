@@ -1,28 +1,30 @@
+
+//Apparition de modes en Admin
 async function PageAdmin() {
     // Récupérer le token du local storage
     const token = await localStorage.getItem('token');
     console.log(token);
 
-    // Vérifier si le token est présent
+    // Vérif si le token est présent
     if (token === 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MTg3NDkzOSwiZXhwIjoxNjUxOTYxMzM5fQ.JGN1p8YIfR-M-5eQ-Ypy6Ima5cKA4VbfL2xMr2MgHm4') {
         // Le token est présent, afficher la div
         const bandeau = document.getElementsByClassName('bandeau');
         const LogOut = document.getElementsByClassName('logout');
         const modifier = document.getElementsByClassName('visible');
         const bouton = document.getElementsByClassName('btnS')
-        if (bandeau, LogOut, modifier, bouton) {
+        
             bandeau.style.display = 'flex';
             LogOut.style.display = 'flex';
             modifier.style.display = 'flex';
             bouton.style.display = 'none';
-        }
+
     }
 }
-
 // Appeler la fonction lorsque la page est chargée
 document.addEventListener('DOMContentLoaded', PageAdmin);
 
 
+// Fonction pour activer le modale
 const modalContainer = document.querySelector(".modal-container");
 const modalTriggers = document.querySelectorAll(".modal-trigger");
 const urlImage = 'http://localhost:5678/api/works';
