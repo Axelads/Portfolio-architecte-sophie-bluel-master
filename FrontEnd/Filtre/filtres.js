@@ -18,8 +18,7 @@ async function GeneratFiltre() {
     formulaire.appendChild(filtre)
   
   });
-}
-
+};
 await GeneratFiltre()
 
 

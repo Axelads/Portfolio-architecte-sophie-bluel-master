@@ -96,6 +96,7 @@ nav li {
 }
 
 .bandeau {
+	display: none;
 	justify-content: center;
 	background-color: black;
 	width: 100vw;
@@ -123,7 +124,7 @@ nav li {
 }
 
 .logout {
-	display: flex;
+	display: none;
 	cursor: pointer;
 	background-color: #fff;
 	border: none;
@@ -180,6 +181,7 @@ li:hover {
 }
 
 .btnS {
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-bottom: 60px;
@@ -316,6 +318,7 @@ footer nav ul {
 /********** modale *********/
 
 .modalbtn {
+	display: none;
 	margin-left: 25px;
 	justify-content: center;
 	align-items: center;

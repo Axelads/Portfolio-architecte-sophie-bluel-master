@@ -1,7 +1,7 @@
 // creation page admin
 //Apparition de modes en Admin
 
-function PageAdmin() {
+export function PageAdmin() {
     // Récupérer le token du local storage
     const token = localStorage.getItem('token');
     
@@ -13,12 +13,15 @@ function PageAdmin() {
         const LogOut = document.querySelector('.logout');
         const modifier = document.querySelector('.modalbtn');
         const bouton = document.querySelector('.btnS');
-        
-        if (bandeau && LogOut && modifier && bouton) {
+        const login = document.querySelector('.login');
+
+        if (bandeau && LogOut && modifier && bouton && login) {
             bandeau.style.display = 'flex';
             LogOut.style.display = 'flex';
             modifier.style.display = 'flex';
             bouton.style.display = 'none';
+            login.style.display = "none";
+
 
         } 
     } 
