@@ -96,7 +96,6 @@ nav li {
 }
 
 .bandeau {
-	display: flex;
 	justify-content: center;
 	background-color: black;
 	width: 100vw;
@@ -124,8 +123,16 @@ nav li {
 }
 
 .logout {
-	display: none;
+	display: flex;
 	cursor: pointer;
+	background-color: #fff;
+	border: none;
+	font-family: 'Work Sans';
+	font-size: 16px;
+}
+
+.logout:hover {
+	color: #B1663C;
 }
 
 li:hover {
@@ -173,7 +180,6 @@ li:hover {
 }
 
 .btnS {
-	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-bottom: 60px;
@@ -215,7 +221,7 @@ li:hover {
 }
 #contact, #log {
 	width: 50%;
-margin: auto;
+    margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -310,7 +316,6 @@ footer nav ul {
 /********** modale *********/
 
 .modalbtn {
-	display: none;
 	margin-left: 25px;
 	justify-content: center;
 	align-items: center;
@@ -372,6 +377,16 @@ cursor: pointer;
 	font-family: 'Work Sans';
 	margin-bottom: 30px;
 	margin-top: 10px;
+}
+
+#TrashPosition {
+	padding: 5px 5px;
+	position: absolute;
+	background-color: black;
+	cursor: pointer;
+	border-radius: 2px;
+	margin:5px 0px 0px 47px;
+
 }
 
 .modal .addImg {

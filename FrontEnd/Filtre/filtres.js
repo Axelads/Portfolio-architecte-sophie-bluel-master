@@ -1,28 +1,11 @@
 const formulaire = document.querySelector(".btnS");
 const urlImage = 'http://localhost:5678/api/works';
 import { GeneratGallery } from "../gallery/gallery.js";
-// function AjoutBouton () {
 
-// //api /categories  
-//   const UrlCategorie = 'http://localhost:5678/api/categories';
-//   let Valeurbtn = 1;
-//  // Appel de mon API 
-//   fetch(UrlCategorie)
-//     .then(reponse => reponse.json())
-//     .then(datas => {
-// for ( let data of datas ) {
-//       const bouton = document.createElement('button');
-//            bouton.innerText = data.name;
-//            bouton.value = Valeurbtn;
-//            Valeurbtn ++;
-//            bouton.id = data.name;
-//            bouton.classList.add('btn');
-//   formulaire.appendChild(bouton);
-//         }
-//     })
-//   }
-// AjoutBouton()
+
+
 async function GeneratFiltre() {
+  let Valeurbtn = 1;
   const response = await fetch('http://localhost:5678/api/categories')
   const categories = await response.json()
 
@@ -30,6 +13,7 @@ async function GeneratFiltre() {
     const filtre = document.createElement('button')
     filtre.innerText = categorie.name
     filtre.setAttribute('id', categorie.name)
+    filtre.setAttribute('value', Valeurbtn++)
     filtre.classList.add('btn')
     formulaire.appendChild(filtre)
   
@@ -39,39 +23,39 @@ async function GeneratFiltre() {
 await GeneratFiltre()
 
 
-  const response = 'http://localhost:5678/api/works';
+const url = 'http://localhost:5678/api/works';
 
-const bouton = document.querySelectorAll('.btn')
-console.log(bouton);
 const gallery = document.querySelector('.gallery')
 // Fonction click sur les boutons
-function filtre () {
-  const filtres = document.querySelectorAll('.btn')
+function filtreListener() {
+  const boutons = document.querySelectorAll('.btn')
   
-  for ( let filtre of filtres) {
-    filtre.addEventListener('click', (e) => {
-      let value = filtre.id;
-      if (value == 'tous'){
-        gallery.innerHTML = ''
-        GeneratGallery()
-      } else {
-        fetch(response)
+  for ( let btn of boutons) {
+    btn.addEventListener('click', () => {
+        
+      gallery.innerHTML = ''
+        
+        fetch(url)
         .then(response => response.json())
-        .then(datas => {
-          for(let data of datas){
-            console.log(data);
-        if (data.category.name == 'Appartements'){
-          let test ="";
-          gallery.innerHTML="";
-          test+=`<figure>
-          <img src=${data.imageUrl}>
+        .then((datas) => {
+          if (btn.value == 0){
+            GeneratGallery()
+          }
+          else {
+            for(let data of datas){
+              if (data.categoryId == btn.value){
+                let Gallerydisplay ="";
+          
+          Gallerydisplay += `<figure>
+          <img src=${data.imageUrl} alt=${data.title}>
+          <figation>${data.title}</figation>
           </figure>`
-          gallery.insertAdjacentHTML("beforeend",test)
-        }
-      }
-    })
-      };
-       });
+          document.querySelector(".gallery").insertAdjacentHTML("beforeend", Gallerydisplay)
+              }
+            }
+          };  
+        });
+      });
     };
-  }
-filtre();
+  };
+filtreListener();

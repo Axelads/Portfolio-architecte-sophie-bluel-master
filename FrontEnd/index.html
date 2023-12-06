@@ -15,9 +15,11 @@
 	<script src="./gallery/gallery.js" type="module" defer></script>
 	<script src="./Filtre/filtres.js" type="module" defer></script>
 	<script src="admin.js" type="module" defer></script>
+	<script src="logout.js" type="module"></script>
+	<script src="modale.js" type="module" defer></script>
 </head>
 <body>
-	<div class="bandeau">
+	<div class="bandeau" style="display: none;">
 		<button class="boutonEdition"><i class="fa-regular fa-pen-to-square"></i>Mode édition</button>
 	</div>
 <header>
@@ -27,7 +29,7 @@
 			<li>projets</li>
 			<li>contact</li>
 			<li><a href="login/login.html" class="login">login</a></li>
-			<li class="logout">logout</li>
+			<button class="logout" style="display: none;">logout</button>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -58,11 +60,11 @@
 			    </div>
 			</div>
 		</div>
-			<button class="modalbtn modal-trigger"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
+			<button class="modalbtn modal-trigger" style="display: none;"><i class="fa-regular fa-pen-to-square"></i>modifier</button>
 		</div>
 	  <div>		 
-		  <div class="btnS">
-		       	<button class="btn" id="tous">Tous</button>
+		  <div class="btnS" style="display: flex;">
+		       	<button class="btn" id="tous" value="0">Tous</button>
 		   </div>
 		</div>
 		<div class="gallery"></div>
