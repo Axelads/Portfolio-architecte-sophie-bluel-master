@@ -361,9 +361,9 @@ footer nav ul {
 }
 
 .close-modal {
-padding: 8px 10px;
+margin: 8px 12px;
 border: none;
-font-size: 12px;
+font-size: 18px;
 position: absolute;
 top: 10px;
 right: 10px;
@@ -433,4 +433,135 @@ cursor: pointer;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+}
+
+
+
+
+/********** modale Ajout photo ********/
+
+.return-modal {
+	margin: 8px 12px;
+	border: none;
+	font-size: 12px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-weight: bold;
+	background: #fff;
+	cursor: pointer;
+}
+
+
+.modal h3 {
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+	font-size: 26px;
+}
+
+.ajoutPhoto {
+	background-color: #E8F1F6;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+	height: 169px;
+	border-radius: 3px;
+	
+}
+
+.ajoutPhoto i {
+	display: flex;
+	justify-content: center ;
+	padding-top: 25px;
+	color: #CBD6DC;
+	font-size: 70px;
+	}
+
+.AjouterPhoto {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.ajoutPhoto button {
+	display: flex;
+	width: 173px;
+	height: 36px;
+	background-color: #CBD6DC;
+	color: #306685;
+	border: #CBD6DC;
+	border-radius:50px;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	cursor: pointer;
+
+}
+
+.ajoutPhoto p {
+	display: flex;
+	justify-self: center;
+	font-size: 10px;
+}
+
+#AjoutInfos {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+
+#AjoutInfos input[type="text"] {
+	display: flex;
+	height: 50px;
+	width: 100%;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#AjoutInfos label[for="title"] {
+	display: flex;
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+#AjoutInfos label[for="categorie"] {
+	display: flex;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	font-size: 14px;
+	position: relative;
+}
+
+#AjoutInfos .select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#AjoutInfos select {
+    width: 100%;
+    height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+
+#AjoutInfos input[type="submit"] {
+	display: flex;
+	justify-content: center;
+	width: 230px;
+	height: 35px;
+	background-color: #A7A7A7;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.borderValider {
+	display:flex ;
+	margin-top: 50px;
+	border-top: 1px solid #A7A7A7;
 }
