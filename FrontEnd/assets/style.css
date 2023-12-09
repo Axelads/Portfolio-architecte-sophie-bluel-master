@@ -471,6 +471,13 @@ cursor: pointer;
 	
 }
 
+.spanImg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
 .ajoutPhoto i {
 	display: flex;
 	justify-content: center ;
@@ -478,6 +485,14 @@ cursor: pointer;
 	color: #CBD6DC;
 	font-size: 70px;
 	}
+
+
+.ajoutPhoto img {
+	display: flex;
+	width: 120px;
+	height: 100%;
+
+}
 
 .AjouterPhoto {
 	display: flex;

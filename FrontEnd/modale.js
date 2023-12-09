@@ -18,8 +18,10 @@ const modalGallery = document.querySelector(".modal-Galery");
 modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
 // modalTriggers.addEventListener("click", () => 
 
-function toggleModal(){
+export function toggleModal(){
     modalContainer.classList.toggle("active");
+    let ValeurIcone = 1
+    let ValeurImg = 1
 
     if(modalContainer.classList.contains("active")) {
     fetch(urlImage)
@@ -32,10 +34,12 @@ function toggleModal(){
         trashIcon.className = "fa-regular fa-trash-can";
         trashIcon.style.color = "#FFFFFF";
         trashIcon.id = "TrashPosition";
+        trashIcon.setAttribute('value', ValeurIcone++)
     // Insertion des images de l'api  
       let dynamiqueimage = document.createElement("img")
       dynamiqueimage.src = data.imageUrl;
-          
+      dynamiqueimage.setAttribute('value', ValeurImg++)
+                
     figure.appendChild(trashIcon);
     figure.appendChild(dynamiqueimage)
     modalGallery.appendChild(figure)
