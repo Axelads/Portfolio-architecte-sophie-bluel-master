@@ -18,9 +18,10 @@ addImgButton.addEventListener('click', function() {
         </div>
         <h3>Ajout photo</h3>
         <div class="ajoutPhoto">
-           <i class="fa-regular fa-image"></i>
+           <i class="fa-regular fa-image ImgDefault"></i>
            <div class="AjouterPhoto">
-              <button>+ Ajouter photo</button>
+              <label for="input-file">+ Ajouter photo</label>
+              <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
            </div>
         <p>jpg, png : 4mo max</p>
         </div>
@@ -38,4 +39,5 @@ addImgButton.addEventListener('click', function() {
                 <input type="submit" value="Valider">
                 </div>`;
 })
-})
+});
+
