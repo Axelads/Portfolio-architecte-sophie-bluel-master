@@ -58,8 +58,6 @@ fileInput.addEventListener('change', function(event) {
             const divImg = document.createElement('span');
             divImg.classList.add('spanImg');
             
-
-            
             const imgElement = document.createElement('img');
             imgElement.classList.add('ImgDefault');
             imgElement.src = e.target.result;
