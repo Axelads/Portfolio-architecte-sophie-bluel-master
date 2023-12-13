@@ -15,15 +15,16 @@ addImgButton.addEventListener('click', function() {
                <button class="return-modal modal-trigger">retour</i></>
         </div>
         <h3>Ajout photo</h3>
+    <form action="" class="form-AjoutPhoto">
         <div class="ajoutPhoto">
            <i class="fa-regular fa-image ImgDefault"></i>
            <div class="AjouterPhoto">
               <label for="input-file">+ Ajouter photo</label>
               <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file" max-size="4000" name="imageUrl">
+            </div>
+            <p>jpg, png : 4mo max</p>
         </div>
-        <p>jpg, png : 4mo max</p>
-        </div>
-        <form id="AjoutInfos">
+        <div id="AjoutInfos">
                 <label for="title">Titre</label>
                 <input type="text">
                 <label for="categorie">Catégorie</label>
@@ -31,11 +32,13 @@ addImgButton.addEventListener('click', function() {
                     <select id="Selection-Categorie" name="categorie" required>
                      <option value="" disabled selected></option>
                      ${categories.map(category => `<option value="${category.id}">${category.name}</option>`).join('')}
-                </select>
+                    </select>
             </div>
                 <div class="borderValider">
                 <input type="submit" value="Valider">
-                </div>`;
+        </div>
+    </form>
+</div>`;
 
 // Evenement pour fermer la modale en cliquant sur le X
     const closeModalButton = document.querySelector('.close-modal');
