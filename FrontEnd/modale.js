@@ -73,7 +73,7 @@ addImgButton.addEventListener('click', function() {
         
     interieurModale.innerHTML = `<div class="button-modale">
                <button class="close-add-modal">X</button>
-               <button class="return-modal">retour</i></button>
+               <button class="return-modal"><img src="../Backend/images/arraw-left.png" class="arraw-left" alt="arraw-left"></button>
         </div>
         <h3>Ajout photo</h3>
     <form action="" class="form-AjoutPhoto">
@@ -109,8 +109,7 @@ addImgButton.addEventListener('click', function() {
 
 //     // Vider le contenu de la modal
 //     modal.innerHTML = '';
-// }
-
+// };
 // Evenement pour fermer la modale en cliquant sur le X
 const closeModalButton = document.querySelector('.close-add-modal');
 closeModalButton.addEventListener('click', () => {
@@ -120,14 +119,24 @@ closeModalButton.addEventListener('click', () => {
     // Vider le contenu de la modal
     modalContainer.classList.remove('active');
     modalGallery.innerHTML = '';
+    // Réinitialiser l'état de la modal
+    ValeurIcone = 1;
+    ValeurImg = 1;
+
+    // Faire apparaître la fonction toggleModalContainer
+    console.log("Avant d'appeler toggleModalContainer");
+    toggleModalContainer();
+    console.log("Après avoir appelé toggleModalContainer");
 });
-
-
-//apppliquer le retour sur le button
 const returnModalButton = document.querySelector('.return-modal');
-    returnModalButton.addEventListener('click', function () {
-            toggleModalContainer(); // Activer la fonction toggleModalContainer
-    });
+    returnModalButton.addEventListener('click', () => {
+        const modalDiv = document.querySelector('.modal');
+        
+        // Vider le contenu de la div avec la classe "modal"
+        modalDiv.innerHTML = '';
+        });
+
+
 
 // remplacement de l'icone par le file (img) charger 
     const fileInput = document.getElementById('input-file');
@@ -157,10 +166,4 @@ fileInput.addEventListener('change', function(event) {
     }
 });
 });
-});
-
-// // appel au bouton reour
-// const retourModale = document.querySelector('.return-modal');
-// retourModale.addEventListener('click', () => {
-//     toggleModal()
-// })
+})
