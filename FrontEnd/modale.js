@@ -75,7 +75,7 @@ addImgButton.addEventListener('click', function() {
                <button class="close-add-modal">X</button>
                <button class="return-modal"><img src="../Backend/images/arraw-left.png" class="arraw-left" alt="arraw-left"></button>
         </div>
-        <h3>Ajout photo</h3>
+        <div class="Ajout-Photo"><h3>Ajout photo</h3></div>
     <form action="" class="form-AjoutPhoto">
         <div class="ajoutPhoto">
            <i class="fa-regular fa-image ImgDefault"></i>
@@ -96,7 +96,8 @@ addImgButton.addEventListener('click', function() {
                     </select>
             </div>
                 <div class="borderValider">
-                <input type="submit" value="Valider">
+                <input id="desact" type="submit" value="Valider">
+                <input id="prete" type="submit" value="Valider">
         </div>
     </form>
 </div>`;
@@ -104,6 +105,7 @@ CloseModalButton();
 ReturnModal();
 ChangeImg();
 PostModale ();
+btnValider ();
 })
 });
 
@@ -130,32 +132,45 @@ function ReturnModal() {
     });
 }
 
-function ChangeImg () {
-// remplacement de l'icone par le file (img) charger 
+function ChangeImg() {
+    // remplacement de l'icone par le file (img) charger 
     const fileInput = document.getElementById('input-file');
-fileInput.addEventListener('change', function(event) {
-    const selectedFile = event.target.files[0];
+    
+    fileInput.addEventListener('change', function (event) {
+        const selectedFile = event.target.files[0];
 
-    // verification si fichier selectionné
-    if (selectedFile) {
-    // creation objet FileReader
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
+        // Vérification si un fichier est sélectionné
+        if (selectedFile) {
             const divImg = document.createElement('span');
             divImg.classList.add('spanImg');
-            
+
             const imgElement = document.createElement('img');
             imgElement.classList.add('ImgDefault');
-            imgElement.src = e.target.result;
-
+            imgElement.src = URL.createObjectURL(selectedFile);
             const ajoutPhotoDiv = document.querySelector('.ajoutPhoto');
             ajoutPhotoDiv.innerHTML = '';
             ajoutPhotoDiv.appendChild(divImg);
             divImg.appendChild(imgElement);
-        };
+            btnValider();
+        }
+    });
+}
 
-        reader.readAsDataURL(selectedFile);
+
+
+function btnValider() {
+    const formDesactive = document.querySelector("#desact");
+    const formActive = document.querySelector("#prete");
+
+    const fileInput = document.getElementById('input-file');
+    const titleInput = document.querySelector('.form-AjoutPhoto input[type="text"]');
+    const categorySelect = document.getElementById('Selection-Categorie');
+
+    if (fileInput && titleInput && categorySelect) {
+        formDesactive.style.display = 'flex';
+        formActive.style.display = 'none';
+    } else {
+        formDesactive.style.display = 'none';
+        formActive.style.display = 'flex';
     }
-});
 }

@@ -467,11 +467,17 @@ align-items: center;
 
 }
 
+
 .modal h3 {
 	display: flex;
 	justify-content: center;
 	margin-top: 25px;
 	font-size: 26px;
+}
+
+.Ajout-Photo p {
+	display: flex;
+	justify-content: center;
 }
 
 .ajoutPhoto {
@@ -581,7 +587,7 @@ align-items: center;
 }
 
 
-#AjoutInfos input[type="submit"] {
+#desact {
 	display: flex;
 	justify-content: center;
 	width: 230px;
@@ -589,7 +595,17 @@ align-items: center;
 	background-color: #A7A7A7;
 	color: white;
 	border: none;
+}
+
+#prete {
+	display: none;
 	cursor: pointer;
+	justify-content: center;
+	width: 230px;
+	height: 35px;
+	background-color: #1D6154;
+	color: white;
+	border: none;
 }
 
 .borderValider {
