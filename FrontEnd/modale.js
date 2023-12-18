@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
+import { PostModale } from "./PostModale.js";
 const addImgButton = document.querySelector('.addImg');
 const interieurModale = document.querySelector(".modal");
 addImgButton.addEventListener('click', function() {
@@ -100,44 +100,37 @@ addImgButton.addEventListener('click', function() {
         </div>
     </form>
 </div>`;
+CloseModalButton();
+ReturnModal();
+ChangeImg();
+PostModale ();
+})
+});
 
 
-// function resetModalState() {
-//     const modal = document.querySelector('.modal');
-//     ValeurIcone = 1;
-//     ValeurImg = 1;
 
-//     // Vider le contenu de la modal
-//     modal.innerHTML = '';
-// };
 // Evenement pour fermer la modale en cliquant sur le X
-const closeModalButton = document.querySelector('.close-add-modal');
-closeModalButton.addEventListener('click', () => {
-    const modalContainer = document.querySelector('.modal-container');
+function CloseModalButton() {
+    const closeModalButton = document.querySelector('.close-add-modal');
+    closeModalButton.addEventListener('click', () => {
+        const ModalContainer = document.querySelector('.modal-container');
+        
+        // Vider le contenu de la modal
+        ModalContainer.classList.remove('active');
+        
+    });
+}
+
+function ReturnModal() {
+    const returnModalButton = document.querySelector('.return-modal');
     const modalGallery = document.querySelector('.modal-Galery');
 
-    // Vider le contenu de la modal
-    modalContainer.classList.remove('active');
-    modalGallery.innerHTML = '';
-    // Réinitialiser l'état de la modal
-    ValeurIcone = 1;
-    ValeurImg = 1;
+    returnModalButton.addEventListener('click', () => { 
+        toggleModalContainer();
+    });
+}
 
-    // Faire apparaître la fonction toggleModalContainer
-    console.log("Avant d'appeler toggleModalContainer");
-    toggleModalContainer();
-    console.log("Après avoir appelé toggleModalContainer");
-});
-const returnModalButton = document.querySelector('.return-modal');
-    returnModalButton.addEventListener('click', () => {
-        const modalDiv = document.querySelector('.modal');
-        
-        // Vider le contenu de la div avec la classe "modal"
-        modalDiv.innerHTML = '';
-        });
-
-
-
+function ChangeImg () {
 // remplacement de l'icone par le file (img) charger 
     const fileInput = document.getElementById('input-file');
 fileInput.addEventListener('change', function(event) {
@@ -165,5 +158,4 @@ fileInput.addEventListener('change', function(event) {
         reader.readAsDataURL(selectedFile);
     }
 });
-});
-})
+}

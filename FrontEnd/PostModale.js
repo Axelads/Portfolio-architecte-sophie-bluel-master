@@ -1,41 +1,41 @@
-// const ajoutInfosForm = document.querySelector('.borderValider input[type="submit"]');
-// ajoutInfosForm.addEventListener('submit', function (event) {
-//     event.preventDefault();
+export function PostModale () {
+const fileInput = document.getElementById('input-file');
+const titleInput = document.querySelector('.form-AjoutPhoto input[type="text"]');
+const categorySelect = document.getElementById('Selection-Categorie');
+const form = document.querySelector('.form-AjoutPhoto');
+const token = localStorage.getItem('token');
 
-//     // Récupération des valeurs du formulaire
-//     const title = document.querySelector('#AjoutInfos input[type="text"]').value;
-//     const categorie = document.querySelector('#Selection-Categorie').value;
-//     const imageUrl = document.querySelector('#input-file').files[0];
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); 
 
-    
-//     if (title && categorie && imageUrl) {
-        
-//         const formData = new FormData();
-//         formData.append('title', title);
-//         formData.append('category', categorie);
-//         formData.append('imageUrl', imageUrl);
+    const selectedFile = fileInput.files[0];
 
-        
-//         fetch('http://localhost:5678/api/works', {
-//             method: 'POST',
-//             headers: {
-//                 'Authorization': `Bearer ${token}`
-//             },
-//             body: JSON.stringify(formData)
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Image ajoutée avec succès:', data);
-           
-//             const modalContainer = document.querySelector(".modal-container");
-//             modalContainer.classList.remove("active");
-//         })
-//         .catch(error => {
-//             console.error("Erreur lors de l'ajout de l'image:", error);
+    if (selectedFile && titleInput.value && categorySelect.value) {
+        const formData = new FormData();
+
+        formData.append('title', titleInput.value);
+        formData.append('imageUrl', selectedFile);
+        formData.append('categoryId', categorySelect.value);
+        formData.append('userId', userId);
+
+        // Effectuez la requête POST
+        fetch('http://localhost:5678/api/works', {
+             method: 'POST',
+             headers: {
+             'Authorization': `Bearer ${token}`
+        },
+            body: JSON.stringify(formData)
+                     })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Réponse de l'API:", data);
             
-//         });
-//     } else {
-//         console.error('Veuillez remplir tous les champs du formulaire.');
-        
-//     }
-// });
+        })
+        .catch(error => {
+            console.error('Erreur lors de la requête POST:', error);
+        });
+    } else {
+        console.log('Veuillez remplir tous les champs');
+    }
+});
+}
