@@ -8,8 +8,11 @@ function toggleModalContainer() {
     const modalContainer = document.querySelector('.modal-container');
     const closeBtn = document.querySelector('.close-modal');
     const overlay = document.querySelector('.overlay');
+    const modalGallery = document.querySelector('.modal-Galery');
 
     modalContainer.classList.toggle('active');
+
+    
 
     if (modalContainer.classList.contains('active')) {
         fetch('http://localhost:5678/api/works')
@@ -20,21 +23,26 @@ function toggleModalContainer() {
 
                 for (let data of datas) {
                     const figure = document.createElement("figure");
+                    const btnIcone = document.createElement("button");
+                    btnIcone.id = "TrashPosition";
+                    btnIcone.setAttribute('value', ValeurIcone++);
 
                     let trashIcon = document.createElement("i");
                     trashIcon.className = "fa-regular fa-trash-can";
                     trashIcon.style.color = "#FFFFFF";
-                    trashIcon.id = "TrashPosition";
-                    trashIcon.setAttribute('value', ValeurIcone++);
+                    // trashIcon.id = "TrashPosition";
+                    
 
                     // Insertion des images de l'api  
                     let dynamiqueimage = document.createElement("img");
                     dynamiqueimage.src = data.imageUrl;
                     dynamiqueimage.setAttribute('value', ValeurImg++);
 
-                    figure.appendChild(trashIcon);
+                
+                    figure.appendChild(btnIcone);
+                    btnIcone.appendChild(trashIcon);
                     figure.appendChild(dynamiqueimage);
-                    modalGallery.appendChild(figure);
+                    modalGallery.appendChild(figure);                                     
                 }
             });
     } else {
@@ -46,11 +54,13 @@ function toggleModalContainer() {
     if (closeBtn) {
         closeBtn.addEventListener('click', function () {
             modalContainer.classList.remove('active');
+            modalGallery.innerHTML=""
         });
     }
     if (overlay) {
         overlay.addEventListener('click', function () {
             modalContainer.classList.remove('active');
+            modalGallery.innerHTML=""
         });
     }
 }
@@ -58,8 +68,11 @@ function toggleModalContainer() {
 document.addEventListener('DOMContentLoaded', function () {
     const modalBtn = document.querySelector('.modalbtn');
     if (modalBtn) {
-        modalBtn.addEventListener('click', toggleModalContainer);
-    }
+        modalBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            toggleModalContainer();
+    });
+}
 });
 
 import { PostModale } from "./PostModale.js";

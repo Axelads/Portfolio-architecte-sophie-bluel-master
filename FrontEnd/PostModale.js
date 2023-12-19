@@ -4,7 +4,6 @@ const titleInput = document.querySelector('.form-AjoutPhoto input[type="text"]')
 const categorySelect = document.getElementById('Selection-Categorie');
 const form = document.querySelector('.form-AjoutPhoto');
 const token = localStorage.getItem('token');
-const DivPhoto = document.querySelector(".Ajout-Photo")
 
 form.addEventListener('submit', function (event) {
     event.preventDefault(); 

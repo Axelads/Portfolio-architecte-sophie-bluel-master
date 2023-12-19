@@ -387,9 +387,14 @@ cursor: pointer;
 	position: absolute;
 	background-color: black;
 	cursor: pointer;
-	border-radius: 2px;
+	border: none;
 	margin:5px 0px 0px 47px;
+	border-radius: 2px;
+}
 
+#TrashPosition i {
+	margin: auto;
+	border-radius: 15px;
 }
 
 .modal .addImg {
