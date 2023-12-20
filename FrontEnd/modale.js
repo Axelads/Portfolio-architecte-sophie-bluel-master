@@ -17,9 +17,7 @@ function toggleModalContainer() {
     if (modalContainer.classList.contains('active')) {
         fetch('http://localhost:5678/api/works')
             .then(response => response.json())
-            .then(datas => {
-                const modalGallery = document.querySelector('.modal-Galery');
-                modalGallery.innerHTML = "";
+            .then(datas => {             
 
                 for (let data of datas) {
                     const figure = document.createElement("figure");
@@ -44,23 +42,22 @@ function toggleModalContainer() {
                     figure.appendChild(dynamiqueimage);
                     modalGallery.appendChild(figure);                                     
                 }
-            });
-    } else {
-        const modalGallery = document.querySelector('.modal-Galery');
-        modalGallery.innerHTML = ""; // Vide la galerie si la modal n'est pas active
-        ValeurIcone = 1;  
-        ValeurImg = 1;
+    })
     }
     if (closeBtn) {
         closeBtn.addEventListener('click', function () {
             modalContainer.classList.remove('active');
             modalGallery.innerHTML=""
+            ValeurIcone = 1;  
+            ValeurImg = 1;
         });
     }
     if (overlay) {
         overlay.addEventListener('click', function () {
             modalContainer.classList.remove('active');
             modalGallery.innerHTML=""
+            ValeurIcone = 1;  
+        ValeurImg = 1;
         });
     }
 }
@@ -139,8 +136,12 @@ function CloseModalButton() {
 function ReturnModal() {
     const returnModalButton = document.querySelector('.return-modal');
     const modalGallery = document.querySelector('.modal-Galery');
+    const modalContainer = document.querySelector(".modal-container")
 
-    returnModalButton.addEventListener('click', () => { 
+    returnModalButton.addEventListener('click', () => {
+        
+           
+        modalContainer.classList.toggle('active'); 
         toggleModalContainer();
     });
 }
