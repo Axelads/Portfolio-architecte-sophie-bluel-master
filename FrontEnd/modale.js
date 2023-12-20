@@ -97,7 +97,7 @@ addImgButton.addEventListener('click', function() {
         </div>
         <div id="AjoutInfos">
                 <label for="title">Titre</label>
-                <input type="text">
+                <input id="test" type="text">
                 <label for="categorie">Catégorie</label>
             <div class="select-wrapper">
                     <select id="Selection-Categorie" name="categorie" required>
@@ -107,8 +107,7 @@ addImgButton.addEventListener('click', function() {
             </div>
                 <div class="borderValider">
                 <input id="desact" type="submit" value="Valider">
-                <input id="prete" type="submit" value="Valider">
-        </div>
+            </div>
     </form>
 </div>`;
 CloseModalButton();
@@ -172,19 +171,16 @@ function ChangeImg() {
 
 
 
-function btnValider() {
-    const formDesactive = document.querySelector("#desact");
-    const formActive = document.querySelector("#prete");
-
+// function btnValider() {
+    const formDesactive = document.getElementById("desact");
     const fileInput = document.getElementById('input-file');
-    const titleInput = document.querySelector('.form-AjoutPhoto input[type="text"]');
+    const titleInput = document.getElementById('test');
     const categorySelect = document.getElementById('Selection-Categorie');
 
-    if (fileInput && titleInput && categorySelect) {
-        formDesactive.style.display = 'flex';
-        formActive.style.display = 'none';
+    if (titleInput="Axel") {
+        formDesactive.style.background = 'green';
+        
     } else {
-        formDesactive.style.display = 'none';
-        formActive.style.display = 'flex';
-    }
-}
+        formDesactive.style.background = 'gray';
+           }
+// }
